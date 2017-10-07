@@ -18,14 +18,19 @@ var guessesLeft = 0;
  // ===============================================
 
 function startGame () {
-	selectedWord = codeOptions[Math.floor(Math.random() * codeOptions.length)];
-	letters = selectedWord.split("");
-	numBlanks = letters.length;
-
-	// Reset
 	guessesLeft = 20;
 	wrongLetters = [];
 	blanksAndSuccesses = [];
+	wrongGuesses = [];
+
+
+	selectedWord = codeOptions[Math.floor(Math.random() * codeOptions.length)];
+	letters = selectedWord.split("");
+	numBlanks = letters.length;
+	document.getElementById("wrongGuesses").innerHTML=wrongGuesses;
+
+	// Reset
+	
 
 	for (var i = 0; i<numBlanks; i++){
 
